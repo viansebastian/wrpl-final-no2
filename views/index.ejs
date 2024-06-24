@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supervisor Proposals</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>Supervisor Proposals</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Student</th>
+        <th>First Choice</th>
+        <th>Second Choice</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% proposals.forEach(proposal => { %>
+        <tr>
+          <td><%= students.find(student => student.id === proposal.student_id).name %></td>
+          <td><%= supervisors.find(supervisor => supervisor.id === proposal.supervisor1_id).name %></td>
+          <td><%= supervisors.find(supervisor => supervisor.id === proposal.supervisor2_id).name %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</body>
+</html>
